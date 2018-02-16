@@ -1,0 +1,40 @@
+@import './reset.scss';
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #cecdc2;
+}
+
+header {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #eee;
+    border-bottom: 1px solid black;
+
+        .sourceList {
+            font-size: 18px;
+            text-align: center;
+
+            .sourceItem {
+                display: inline-block;
+                width: 90px;
+                vertical-align: middle;
+                margin: 3px 20px 3px 0;
+                cursor: pointer;
+
+                &.activeSource {
+                    color: red;
+                }
+            }
+        }
+}
