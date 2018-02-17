@@ -54,26 +54,29 @@ class App extends React.Component {
 	onAddBlog(blog) {
 		this.setState((prevState) => {
 			let newBlogs = prevState.blogs;
-            newBlogs.unshift(blog);
-            return {blogs: newBlogs};
+			newBlogs.unshift(blog);
+			return {blogs: newBlogs};
 		})
 	}
 
 	render() {
 		return (
 			<div className="container">
-				<button className="addBlogBtn btn" onClick={ this.openAddBlogModal } >Add blog</button>
-				<SearchBlog onSearchChange={ this.onSearchChange } />
+				<button className="addBlogBtn btn" onClick={this.openAddBlogModal} >Add blog</button>
+				<SearchBlog onSearchChange={this.onSearchChange} />
 				<ul className="blogList">
 					{
 						this.state.blogs
 							.filter((blog) => blog[this.state.searchBlog.option].includes(this.state.searchBlog.value))
-							.map((blog, index) => <Blog key={index} blog={blog} onDelete={ this.onDeleteBlog } />)
+							.map((blog, index) => <Blog key={index} blog={blog} onDelete={this.onDeleteBlog} />)
 					}
 				</ul>
 				{ this.state.showAddBlogPortal &&
 					<Portal>
-						<AddBlogModal onAddBlog={ this.onAddBlog } closeAddBlogModal= { this.closeAddBlogModal } />
+						<AddBlogModal 
+							onAddBlog={this.onAddBlog} 
+							closeAddBlogModal={this.closeAddBlogModal} 
+						/>
 					</Portal>
 				}
 

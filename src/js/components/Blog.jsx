@@ -39,10 +39,14 @@ class Blog extends React.Component {
 					<dt> Message: </dt>
 					<dd> {this.props.blog.message}</dd>
 				</dl>
-				<a href="#" className="removeBlog" onClick={ this.openDeleteBlogModal }> X </a>
+				<a href="#" className="removeBlog" onClick={this.openDeleteBlogModal}> X </a>
 				{ this.state.showDeleteBlogModal &&
 					<Portal>
-						<DeleteBlogModal blog= {this.props.blog} closeDeleteBlogModal= { this.closeDeleteBlogModal } acceptDelete={ this.onDelete }/>
+						<DeleteBlogModal 
+							blog= {this.props.blog} 
+							closeDeleteBlogModal={this.closeDeleteBlogModal} 
+							acceptDelete={this.onDelete}
+						/>
 					</Portal>
 				}
 			</li>
