@@ -1,6 +1,8 @@
 import React from "react";
 import Blog from "./Blog.jsx";
 import SearchBlog from "./SearchBlog.jsx";
+import Portal from "./Portal.jsx";
+import AddBlogModal from './modals/AddBlogModal.jsx';
 
 class App extends React.Component {
 	constructor(props) {
@@ -8,6 +10,8 @@ class App extends React.Component {
 
 		this.onDeleteBlog = this.onDeleteBlog.bind(this);
 		this.onSearchChange = this.onSearchChange.bind(this);
+		this.openAddBlogModal = this.openAddBlogModal.bind(this);
+		this.closeAddBlogModal = this.closeAddBlogModal.bind(this);		
 
 		this.state = {
 			blogs:[
@@ -22,9 +26,18 @@ class App extends React.Component {
 			searchBlog: {
 				value: '',
 				option: 'title'
-			}
+			},
+			showAddBlogPortal: false
 		}
 
+	}
+
+	closeAddBlogModal() {
+		this.setState({ showAddBlogPortal: false })
+	}
+
+	openAddBlogModal() {
+		this.setState({ showAddBlogPortal: true })
 	}
 
 	onSearchChange(value) {
@@ -40,7 +53,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<button className="addBlogBtn">Add blog</button>
+				<button className="addBlogBtn" onClick={ this.openAddBlogModal } >Add blog</button>
 				<SearchBlog onSearchChange={ this.onSearchChange } />
 				<ul className="blogList">
 					{
@@ -49,6 +62,11 @@ class App extends React.Component {
 							.map((blog, index) => <Blog key={index} blog={blog} onDelete={ this.onDeleteBlog } />)
 					}
 				</ul>
+				{ this.state.showAddBlogPortal &&
+					<Portal>
+						<AddBlogModal closeAddBlogModal= { this.closeAddBlogModal } />
+					</Portal>
+				}
 			</div>
 			);
 	}

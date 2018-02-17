@@ -1,15 +1,31 @@
 import React from "react";
+import Portal from "./Portal.jsx";
+import DeleteBlogModal from "./modals/DeleteBlogModal.jsx";
 
 class Blog extends React.Component {
 	constructor(props) {
 		super(props);
 
+		this.state = {
+			showDeleteBlogModal: false
+		}
+
 		this.onDelete = this.onDelete.bind(this);
+		this.closeDeleteBlogModal = this.closeDeleteBlogModal.bind(this);
+		this.openDeleteBlogModal = this.openDeleteBlogModal.bind(this);
 	}
 
-	onDelete(e) {
-		e.preventDefault();
+	onDelete() {
 		this.props.onDelete(this.props.blog);
+	}
+
+	closeDeleteBlogModal() {
+		this.setState({ showDeleteBlogModal: false })
+	}
+
+	openDeleteBlogModal(e) {
+		e.preventDefault();
+		this.setState({ showDeleteBlogModal: true })
 	}
 
 	render() {
@@ -23,7 +39,12 @@ class Blog extends React.Component {
 					<dt> Message: </dt>
 					<dd> {this.props.blog.message}</dd>
 				</dl>
-				<a href="#" className="removeBlog" onClick={ this.onDelete }> X </a>
+				<a href="#" className="removeBlog" onClick={ this.openDeleteBlogModal }> X </a>
+				{ this.state.showDeleteBlogModal &&
+					<Portal>
+						<DeleteBlogModal closeDeleteBlogModal= { this.closeDeleteBlogModal } acceptDelete={ this.onDelete }/>
+					</Portal>
+				}
 			</li>
 			);
 	}
