@@ -1,0 +1,17 @@
+.btn {
+	font-size: 20px;
+	cursor: pointer;
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background-color: #2e466e;
+	color: white;
+	border: 1px solid #1f2f47;
+
+	&:hover {
+				background-color:#415989;
+			}
+
+	&:active {
+		position:relative;
+		top: 1px;
+	}
+}

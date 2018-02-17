@@ -8,10 +8,11 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.onDeleteBlog = this.onDeleteBlog.bind(this);
-		this.onSearchChange = this.onSearchChange.bind(this);
 		this.openAddBlogModal = this.openAddBlogModal.bind(this);
-		this.closeAddBlogModal = this.closeAddBlogModal.bind(this);		
+		this.closeAddBlogModal = this.closeAddBlogModal.bind(this);
+		this.onSearchChange = this.onSearchChange.bind(this);
+		this.onDeleteBlog = this.onDeleteBlog.bind(this);
+		this.onAddBlog = this.onAddBlog.bind(this);
 
 		this.state = {
 			blogs:[
@@ -50,10 +51,18 @@ class App extends React.Component {
 		})
 	}
 
+	onAddBlog(blog) {
+		this.setState((prevState) => {
+			let newBlogs = prevState.blogs;
+            newBlogs.unshift(blog);
+            return {blogs: newBlogs};
+		})
+	}
+
 	render() {
 		return (
 			<div className="container">
-				<button className="addBlogBtn" onClick={ this.openAddBlogModal } >Add blog</button>
+				<button className="addBlogBtn btn" onClick={ this.openAddBlogModal } >Add blog</button>
 				<SearchBlog onSearchChange={ this.onSearchChange } />
 				<ul className="blogList">
 					{
@@ -64,9 +73,10 @@ class App extends React.Component {
 				</ul>
 				{ this.state.showAddBlogPortal &&
 					<Portal>
-						<AddBlogModal closeAddBlogModal= { this.closeAddBlogModal } />
+						<AddBlogModal onAddBlog={ this.onAddBlog } closeAddBlogModal= { this.closeAddBlogModal } />
 					</Portal>
 				}
+
 			</div>
 			);
 	}

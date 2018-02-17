@@ -1,6 +1,6 @@
 import React from "react";
 import Portal from "./Portal.jsx";
-import DeleteBlogModal from "./modals/DeleteBlogModal.jsx";
+import DeleteBlogModal from "./modals/DeleteBlogModal.jsx"
 
 class Blog extends React.Component {
 	constructor(props) {
@@ -42,7 +42,7 @@ class Blog extends React.Component {
 				<a href="#" className="removeBlog" onClick={ this.openDeleteBlogModal }> X </a>
 				{ this.state.showDeleteBlogModal &&
 					<Portal>
-						<DeleteBlogModal closeDeleteBlogModal= { this.closeDeleteBlogModal } acceptDelete={ this.onDelete }/>
+						<DeleteBlogModal blog= {this.props.blog} closeDeleteBlogModal= { this.closeDeleteBlogModal } acceptDelete={ this.onDelete }/>
 					</Portal>
 				}
 			</li>
