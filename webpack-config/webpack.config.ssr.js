@@ -1,13 +1,16 @@
+const webpack = require('webpack');
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
- module.exports = {
-	entry: ["react-hot-loader/patch", "./src/client/js"],
+module.exports ={
+	entry: './src/server/index.js',
 	output: {
 		path: path.resolve(__dirname, '../public/'),
 		publicPath: '../public/',
-		filename: 'bundle.js'
+		filename: 'ssr.bundle.js',
 	},
+	target: "node",
 	module: {
 		rules: [
 			{
@@ -17,18 +20,14 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 			},
 			{
 				test: /\.scss$/,
-				use: ExtractTextPlugin.extract({
-					use: [{
-						loader: "css-loader"
-					}, {
-						loader: "sass-loader"
-					}],
-					fallback: "style-loader"
-				})
+				loader: 'ignore-loader'
 			}
 		]
 	},
+	externals: [nodeExternals()],
 	plugins: [
-		new ExtractTextPlugin("style.css")
-	]
- }
+		new webpack.ProvidePlugin({
+			"fetch": "isomorphic-fetch"
+		})
+	],
+};

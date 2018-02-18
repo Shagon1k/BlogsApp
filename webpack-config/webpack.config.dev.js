@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 module.exports = merge(common, {
 	devtool: 'inline-source-map',
 	output: {
-        publicPath: '/dest/'
+        publicPath: '/public/'
     },
 	devServer: {
 		hot: true,
