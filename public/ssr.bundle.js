@@ -137,9 +137,9 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(Portal, 'Portal', 'D:/-FRONTCAMP-/BlogsApp/src/client/js/components/Portal.jsx');
+	__REACT_HOT_LOADER__.register(Portal, 'Portal', 'Main/Other/FrontCamp/BlogsApp/src/client/js/components/Portal.jsx');
 
-	__REACT_HOT_LOADER__.register(_default, 'default', 'D:/-FRONTCAMP-/BlogsApp/src/client/js/components/Portal.jsx');
+	__REACT_HOT_LOADER__.register(_default, 'default', 'Main/Other/FrontCamp/BlogsApp/src/client/js/components/Portal.jsx');
 }();
 
 ;
@@ -190,9 +190,9 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(port, 'port', 'D:/-FRONTCAMP-/BlogsApp/src/server/index.js');
+	__REACT_HOT_LOADER__.register(port, 'port', 'Main/Other/FrontCamp/BlogsApp/src/server/index.js');
 
-	__REACT_HOT_LOADER__.register(app, 'app', 'D:/-FRONTCAMP-/BlogsApp/src/server/index.js');
+	__REACT_HOT_LOADER__.register(app, 'app', 'Main/Other/FrontCamp/BlogsApp/src/server/index.js');
 }();
 
 ;
@@ -354,9 +354,9 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(App, "App", "D:/-FRONTCAMP-/BlogsApp/src/client/js/components/App.jsx");
+	__REACT_HOT_LOADER__.register(App, "App", "Main/Other/FrontCamp/BlogsApp/src/client/js/components/App.jsx");
 
-	__REACT_HOT_LOADER__.register(_default, "default", "D:/-FRONTCAMP-/BlogsApp/src/client/js/components/App.jsx");
+	__REACT_HOT_LOADER__.register(_default, "default", "Main/Other/FrontCamp/BlogsApp/src/client/js/components/App.jsx");
 }();
 
 ;
@@ -493,9 +493,9 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(Blog, "Blog", "D:/-FRONTCAMP-/BlogsApp/src/client/js/components/Blog.jsx");
+	__REACT_HOT_LOADER__.register(Blog, "Blog", "Main/Other/FrontCamp/BlogsApp/src/client/js/components/Blog.jsx");
 
-	__REACT_HOT_LOADER__.register(_default, "default", "D:/-FRONTCAMP-/BlogsApp/src/client/js/components/Blog.jsx");
+	__REACT_HOT_LOADER__.register(_default, "default", "Main/Other/FrontCamp/BlogsApp/src/client/js/components/Blog.jsx");
 }();
 
 ;
@@ -598,9 +598,9 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(DeleteBlogModal, "DeleteBlogModal", "D:/-FRONTCAMP-/BlogsApp/src/client/js/components/modals/DeleteBlogModal.jsx");
+	__REACT_HOT_LOADER__.register(DeleteBlogModal, "DeleteBlogModal", "Main/Other/FrontCamp/BlogsApp/src/client/js/components/modals/DeleteBlogModal.jsx");
 
-	__REACT_HOT_LOADER__.register(_default, "default", "D:/-FRONTCAMP-/BlogsApp/src/client/js/components/modals/DeleteBlogModal.jsx");
+	__REACT_HOT_LOADER__.register(_default, "default", "Main/Other/FrontCamp/BlogsApp/src/client/js/components/modals/DeleteBlogModal.jsx");
 }();
 
 ;
@@ -695,9 +695,9 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(SearchBlog, 'SearchBlog', 'D:/-FRONTCAMP-/BlogsApp/src/client/js/components/SearchBlog.jsx');
+	__REACT_HOT_LOADER__.register(SearchBlog, 'SearchBlog', 'Main/Other/FrontCamp/BlogsApp/src/client/js/components/SearchBlog.jsx');
 
-	__REACT_HOT_LOADER__.register(_default, 'default', 'D:/-FRONTCAMP-/BlogsApp/src/client/js/components/SearchBlog.jsx');
+	__REACT_HOT_LOADER__.register(_default, 'default', 'Main/Other/FrontCamp/BlogsApp/src/client/js/components/SearchBlog.jsx');
 }();
 
 ;
@@ -823,9 +823,9 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(AddBlogModal, 'AddBlogModal', 'D:/-FRONTCAMP-/BlogsApp/src/client/js/components/modals/AddBlogModal.jsx');
+	__REACT_HOT_LOADER__.register(AddBlogModal, 'AddBlogModal', 'Main/Other/FrontCamp/BlogsApp/src/client/js/components/modals/AddBlogModal.jsx');
 
-	__REACT_HOT_LOADER__.register(_default, 'default', 'D:/-FRONTCAMP-/BlogsApp/src/client/js/components/modals/AddBlogModal.jsx');
+	__REACT_HOT_LOADER__.register(_default, 'default', 'Main/Other/FrontCamp/BlogsApp/src/client/js/components/modals/AddBlogModal.jsx');
 }();
 
 ;
