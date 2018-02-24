@@ -3,9 +3,6 @@ import React from "react";
 class DeleteBlogModal extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.closeDeleteBlog = this.closeDeleteBlog.bind(this);
-		this.acceptDelete = this.acceptDelete.bind(this);
 	}
 
 	closeDeleteBlog(e) {
@@ -21,11 +18,11 @@ class DeleteBlogModal extends React.Component {
 	render() {
 		return (
 			<div className="deleteBlogModal">
-				<a href="#" className="closeBtn" onClick={this.closeDeleteBlog}> X </a>
+				<a href="#" className="closeBtn" onClick={(e) => this.closeDeleteBlog(e)}> X </a>
 				<span className="message">Do you want delete {this.props.blog.title} blog?</span>
 				<div className="buttonSet">
-					<button className="btn" onClick={this.closeDeleteBlog}>No</button>
-					<button className="btn" onClick={this.acceptDelete}>Yes</button>
+					<button className="btn" onClick={(e) => this.closeDeleteBlog(e)}>No</button>
+					<button className="btn" onClick={() => this.acceptDelete()}>Yes</button>
 				</div>
 			</div>
 			);

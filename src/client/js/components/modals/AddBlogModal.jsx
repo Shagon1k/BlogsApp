@@ -9,10 +9,6 @@ class AddBlogModal extends React.Component {
 			author: '',
 			message: ''
 		}
-
-		this.closeAddBlog = this.closeAddBlog.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleInputChange = this.handleInputChange.bind(this);
 	}
 
 	closeAddBlog(e) {
@@ -43,14 +39,14 @@ class AddBlogModal extends React.Component {
 	render() {
 		return (
 			<div className="addBlogModal">
-				<a href="#" className="closeBtn" onClick={ this.closeAddBlog }> X </a>
-				<form className="addBlogForm" onSubmit={this.handleSubmit}>
+				<a href="#" className="closeBtn" onClick={(e) => this.closeAddBlog(e)}> X </a>
+				<form className="addBlogForm" onSubmit={(e) => this.handleSubmit(e)}>
 					<label htmlFor="inputTitle">Title:</label>
-					<input name="title" id="inputTitle" type="text" value={this.state.title} onChange={this.handleInputChange} />
+					<input name="title" id="inputTitle" type="text" value={this.state.title} onChange={(e) => this.handleInputChange(e)} />
 					<label htmlFor="inputAuthor">Author:</label>
-					<input name="author" id="inputAuthor" type="text" value={this.state.author} onChange={this.handleInputChange} />
+					<input name="author" id="inputAuthor" type="text" value={this.state.author} onChange={(e) => this.handleInputChange(e)} />
 					<label htmlFor="inputMessage">Message:</label>
-					<textarea name="message" id="inputMessage" value={this.state.message} onChange={this.handleInputChange} />
+					<textarea name="message" id="inputMessage" value={this.state.message} onChange={(e) => this.handleInputChange(e)} />
 					<button className="addBlogBtn btn">Add blog</button>
 				</form>
 			</div>

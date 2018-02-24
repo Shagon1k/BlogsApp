@@ -8,15 +8,9 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.openAddBlogModal = this.openAddBlogModal.bind(this);
-		this.closeAddBlogModal = this.closeAddBlogModal.bind(this);
-		this.onSearchChange = this.onSearchChange.bind(this);
-		this.onDeleteBlog = this.onDeleteBlog.bind(this);
-		this.onAddBlog = this.onAddBlog.bind(this);
-
 		this.state = {
 			blogs:[
-				{author: "Author One", title: "Title One", message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia assumenda sed est quod hic, iste similique, unde eaque, veniam mollitia tempora? Sit voluptates similique eaque veritatis nihil architecto quibusdam inventore."},
+				{author: "Author Oneasd", title: "Title One", message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia assumenda sed est quod hic, iste similique, unde eaque, veniam mollitia tempora? Sit voluptates similique eaque veritatis nihil architecto quibusdam inventore."},
 				{author: "Author Two", title: "Title Two", message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia assumenda sed est quod hic, iste similique, unde eaque, veniam mollitia tempora? Sit voluptates similique eaque veritatis nihil architecto quibusdam inventore."},
 				{author: "Author Three", title: "Title Three", message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia assumenda sed est quod hic, iste similique, unde eaque, veniam mollitia tempora? Sit voluptates similique eaque veritatis nihil architecto quibusdam inventore."},
 				{author: "Author Four", title: "Title Four", message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia assumenda sed est quod hic, iste similique, unde eaque, veniam mollitia tempora? Sit voluptates similique eaque veritatis nihil architecto quibusdam inventore."},
@@ -32,6 +26,7 @@ class App extends React.Component {
 		}
 
 	}
+
 
 	closeAddBlogModal() {
 		this.setState({ showAddBlogPortal: false })
@@ -62,20 +57,20 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<button className="addBlogBtn btn" onClick={this.openAddBlogModal} >Add blog</button>
-				<SearchBlog onSearchChange={this.onSearchChange} />
+				<button className="addBlogBtn btn" onClick={() => this.openAddBlogModal()} >Add blog</button>
+				<SearchBlog onSearchChange={(v) => this.onSearchChange(v)} />
 				<ul className="blogList">
 					{
 						this.state.blogs
 							.filter((blog) => blog[this.state.searchBlog.option].includes(this.state.searchBlog.value))
-							.map((blog, index) => <Blog key={index} blog={blog} onDelete={this.onDeleteBlog} />)
+							.map((blog, index) => <Blog key={index} blog={blog} onDelete={(b) => this.onDeleteBlog(b)} />)
 					}
 				</ul>
 				{ this.state.showAddBlogPortal &&
 					<Portal>
 						<AddBlogModal 
-							onAddBlog={this.onAddBlog} 
-							closeAddBlogModal={this.closeAddBlogModal} 
+							onAddBlog={(b) => this.onAddBlog(b)} 
+							closeAddBlogModal={() => this.closeAddBlogModal()} 
 						/>
 					</Portal>
 				}

@@ -5,9 +5,14 @@ const SET_SEARCH_PARAM = 'SET_SEARCH_PARAM';
 const OPEN_MODAL = 'OPEN_MODAL';
 const CLOSE_MODAL = 'CLOSE_MODAL';
 
+function genId() {
+	return 'blog_' + Math.random().toString(36).substr(2);
+}
+
 export const addBlog = blog => {
 	return {
 		type: ADD_BLOG,
+		id: genId,
 		blog
 	}
 }
@@ -36,13 +41,18 @@ export const setSearchParam = param => {
 export const openModal = obj => {
 	return {
 		type: OPEN_MODAL,
-		obj
+		modalObject
 	}
 } 
 
 export const closeModal = obj => {
 	return {
 		type: CLOSE_MODAL,
-		obj
+		modalObject
 	}
+}
+
+export const searchParameters = {
+	BY_TITLE: 'BY_TITLE',
+	BY_AUTHOR: 'BY_AUTHOR'
 }

@@ -9,10 +9,6 @@ class Blog extends React.Component {
 		this.state = {
 			showDeleteBlogModal: false
 		}
-
-		this.onDelete = this.onDelete.bind(this);
-		this.closeDeleteBlogModal = this.closeDeleteBlogModal.bind(this);
-		this.openDeleteBlogModal = this.openDeleteBlogModal.bind(this);
 	}
 
 	onDelete() {
@@ -39,13 +35,13 @@ class Blog extends React.Component {
 					<dt> Message: </dt>
 					<dd> {this.props.blog.message}</dd>
 				</dl>
-				<a href="#" className="removeBlog" onClick={this.openDeleteBlogModal}> X </a>
+				<a href="#" className="removeBlog" onClick={(e) => this.openDeleteBlogModal(e)}> X </a>
 				{ this.state.showDeleteBlogModal &&
 					<Portal>
 						<DeleteBlogModal 
 							blog= {this.props.blog} 
-							closeDeleteBlogModal={this.closeDeleteBlogModal} 
-							acceptDelete={this.onDelete}
+							closeDeleteBlogModal={() => this.closeDeleteBlogModal()} 
+							acceptDelete={() => this.onDelete()}
 						/>
 					</Portal>
 				}
