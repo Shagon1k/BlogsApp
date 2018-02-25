@@ -2,7 +2,7 @@ import React from 'react';
 import { render, hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import blogsApp from './reducers';
+import appReducer from './reducers';
 import App from './components/App.jsx';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '../styles/main.scss';
@@ -41,11 +41,10 @@ const initialState = {
 	search: {
 		searchValue: '',
 		searchParam: 'BY_TITLE'
-	},
-	modals: []
+	}
 };
 
-const store = createStore(blogsApp, initialState);
+const store = createStore(appReducer, initialState);
 
 render(
 	<Provider store={store}>

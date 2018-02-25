@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
 import blogs from './blogs';
 import search from './search';
-import modals from './modals';
 
-const blogsApp = combineReducers({
+const appReducer = combineReducers({
 	blogs,
-	search,
-	modals
+	search
 });
 
-export default blogsApp;
+export default appReducer;

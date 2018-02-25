@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
-const AddBlogButton = ({onBlogAdd}) => (
-	<button className="addBlogBtn btn" onClick={() => onBlogAdd()} >Add blog</button>
+const AddBlogBtn = () => (
+	<Link to="/blogs/add" className="addBlog btn">Add blog</Link>
 )
 
-export default AddBlogButton;
+export default AddBlogBtn;
