@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { setSearchValue, setSearchParam } from '../actions';
-import SearchBlog from '../components/SearchBlog/index.jsx';
+import { setSearchValue, setSearchParam } from '../../actions';
+import SearchBlog from '../../components/BlogsApp/SearchBlog/index.jsx';
 
 const mapStateToProps = state => ({
 	search: state.search

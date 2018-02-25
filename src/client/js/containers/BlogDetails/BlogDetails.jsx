@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BlogDetails from '../components/BlogDetails/index.jsx';
+import BlogDetails from '../../components/BlogDetails/index.jsx';
 
 const mapStateToProps = (state, ownProps) => {
 	const blogId = ownProps.match.params.id;
