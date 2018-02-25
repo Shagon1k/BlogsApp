@@ -1,0 +1,28 @@
+.searchBlog {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin: 20px 0;
+
+	.searchBlogInput {
+		flex-basis: 70%;
+		height: 35px;
+		font-size: 20px;
+	}
+
+	.searchBlogOption {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+		flex-basis: 25%;
+		
+		label {
+			flex-basis: 100%;
+			color: white;
+			cursor: pointer;
+		}
+	}
+}
