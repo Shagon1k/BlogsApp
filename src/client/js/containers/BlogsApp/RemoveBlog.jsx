@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { deleteBlog } from '../actions';
-import RemoveBlogModal from '../components/modals/RemoveBlogModal/index.jsx';
+import { deleteBlog } from '../../actions';
+import RemoveBlogModal from '../../components/BlogsApp/modals/RemoveBlogModal/index.jsx';
 
 const mapStateToProps = (state, ownProps) => {
 	const blogObj = state.blogs.find((i) => i.id === ownProps.match.params.id);

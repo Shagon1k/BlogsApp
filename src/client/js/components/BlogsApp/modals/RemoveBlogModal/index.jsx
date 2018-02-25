@@ -1,5 +1,5 @@
 import React from 'react';
-import Portal from '../../Portal.jsx'
+import Portal from '../../../Portal.jsx'
 import './styles.scss';
 
 const RemoveBlogModal = ({onConfirm, onClose, message}) => (
