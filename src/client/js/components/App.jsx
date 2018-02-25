@@ -1,12 +1,12 @@
 import React from 'react';
 import BlogsApp from '../components/BlogsApp/index.jsx';
-import BlogDetailsContainer from '../containers/BlogDetailsContainer.jsx';
+import BlogDetails from '../containers/BlogDetails.jsx';
 import { Route, Switch } from 'react-router-dom';
 
 const App = () => (
 	<div className="appContainer">
 		<Route path="/blogs" component={BlogsApp} />
-		<Route path="/blog/:id" component={BlogDetailsContainer} />
+		<Route path="/blog/:id" component={BlogDetails} />
 	</div>
 )
 

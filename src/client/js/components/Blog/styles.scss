@@ -1,0 +1,44 @@
+.blogBox {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	background: #ccd2dd;
+	border-radius: 5px;
+	padding: 18px;
+	margin-bottom: 10px;
+
+	.blogInfo {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+
+		dt {
+			flex-basis: 20%;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		dd {
+			flex-basis: 80%;
+			margin-bottom: 10px;
+			text-align: justify;
+		}
+	}
+	
+	.removeBlog {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		font-size: 20px;
+		font-weight: bold;
+		color: #961e1e;
+	}
+
+	.blogDetailsLink {
+		position: absolute;
+		right: 12px;
+		bottom: 12px;
+		font-weight: bold;
+		color: #961e1e;
+	}
+}

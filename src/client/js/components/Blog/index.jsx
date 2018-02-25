@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
-const Blog = ({blog, onDelete}) => (
+const Blog = ({blog, blogId, onDelete}) => (
 	<li className="blogBox">
 		<dl className="blogInfo">
 			<dt> Title: </dt>
@@ -12,6 +13,7 @@ const Blog = ({blog, onDelete}) => (
 			<dd> {blog.message}</dd>
 		</dl>
 		<a href="#" className="removeBlog" onClick={() => onDelete()}> X </a>
+		<Link className="blogDetailsLink" to={`/blog/${blogId}`}> Blog details </Link>
 	</li>
 )
 
