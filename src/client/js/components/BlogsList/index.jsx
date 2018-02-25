@@ -1,5 +1,6 @@
 import React from 'react';
-import Blog from './Blog.jsx';
+import Blog from '../Blog/index.jsx';
+import './styles.scss';
 
 const BlogsList = ({blogs, onBlogDelete}) => (
 	<ul className="blogList">

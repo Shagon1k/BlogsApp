@@ -1,6 +1,6 @@
 import React from 'react';
 import Portal from './Portal.jsx';
-import Modal from './modals/Modal.jsx';
+import Modal from './modals/index.jsx';
 
 const Modals = ({modals, closeModal}) => (
 	<ul className="modals">

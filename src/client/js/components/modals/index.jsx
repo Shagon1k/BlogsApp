@@ -1,6 +1,7 @@
 import React from 'react';
-import ConfirmModal from './ConfirmModal.jsx';
-import AddBlogModal from './AddBlogModal.jsx';
+import ConfirmModal from './ConfirmModal/index.jsx';
+import AddBlogModal from './AddBlogModal/index.jsx';
+import './styles.scss';
 
 class Modal extends React.Component {
 	onClose() {
@@ -25,7 +26,7 @@ class Modal extends React.Component {
 			const { message } = this.props.item;
 			return (
 				<ConfirmModal message={message} onClose={() => this.onClose()} onConfirm={() => this.onConfirm()} />
-				)
+			)
 		} else if (type === 'add-blog') {
 			return (
 				<AddBlogModal onClose={() => this.onClose()} onConfirm={(blog) => this.onConfirm(blog)} />

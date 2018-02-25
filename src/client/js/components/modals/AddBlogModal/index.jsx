@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.scss';
 
 class AddBlogModal extends React.Component {
 	constructor(props) {

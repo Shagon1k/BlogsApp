@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, hydrate} from 'react-dom';
+import { render, hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import blogsApp from './reducers';

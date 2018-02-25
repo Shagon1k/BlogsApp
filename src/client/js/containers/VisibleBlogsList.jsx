@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { deleteBlog, openModal } from '../actions';
-import BlogsList from '../components/BlogsList.jsx';
+import BlogsList from '../components/BlogsList/index.jsx';
 
 const getVisibleBlogs = (blogs, search) => {
 	let searchParam;

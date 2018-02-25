@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { addBlog, openModal } from '../actions';
-import AddBlogButton from '../components/AddBlogButton.jsx'
+import AddBlogButton from '../components/AddBlogButton/index.jsx'
 
 const mapDispatchToProps = dispatch => {
 	return {

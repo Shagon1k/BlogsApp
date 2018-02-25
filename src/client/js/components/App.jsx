@@ -1,15 +1,9 @@
 import React from 'react';
-import AddBlog from '../containers/AddBlog.jsx';
-import SearchBlogContainer from '../containers/SearchBlogContainer.jsx';
-import VisibleBlogsList from '../containers/VisibleBlogsList.jsx';
-import ModalsContainer from '../containers/ModalsContainer.jsx';
+import BlogsApp from '../components/BlogsApp/index.jsx';
 
 const App = () => (
-	<div className="container">
-		<AddBlog />
-		<SearchBlogContainer />
-		<VisibleBlogsList />
-		<ModalsContainer />
+	<div className="appContainer">
+		<BlogsApp />
 	</div>
 )
 

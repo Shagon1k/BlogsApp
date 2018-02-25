@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.scss';
 
 const ConfirmModal = ({message, onConfirm, onClose}) => (
 	<div className="confirmModal">

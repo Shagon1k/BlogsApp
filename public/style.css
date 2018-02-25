@@ -1,3 +1,138 @@
+.addBlogBtn {
+  width: 65%;
+  height: 45px;
+  border-radius: 15px; }
+.searchBlog {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0; }
+  .searchBlog .searchBlogInput {
+    flex-basis: 70%;
+    height: 35px;
+    font-size: 20px; }
+  .searchBlog .searchBlogOption {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 25%; }
+    .searchBlog .searchBlogOption label {
+      flex-basis: 100%;
+      color: white;
+      cursor: pointer; }
+.blogList {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center; }
+  .blogList .blogBox {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    background: #ccd2dd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px; }
+    .blogList .blogBox .blogInfo {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start; }
+      .blogList .blogBox .blogInfo dt {
+        flex-basis: 20%;
+        margin-bottom: 5px;
+        font-weight: bold; }
+      .blogList .blogBox .blogInfo dd {
+        flex-basis: 80%;
+        margin-bottom: 5px;
+        text-align: justify; }
+    .blogList .blogBox .removeBlog {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #961e1e; }
+.confirmModal {
+  position: relative; }
+  .confirmModal .message {
+    display: inline-block;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 18px; }
+  .confirmModal .buttonSet {
+    width: 60%;
+    margin: 15px auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between; }
+    .confirmModal .buttonSet button {
+      display: inline-block;
+      width: 125px;
+      height: 40px;
+      border-radius: 5px; }
+.addBlogModal {
+  position: relative; }
+  .addBlogModal .addBlogForm {
+    width: 450px;
+    margin: 0 auto;
+    padding: 30px 0; }
+    .addBlogModal .addBlogForm label {
+      display: inline-block;
+      width: 100%;
+      font-size: 18px;
+      margin-bottom: 3px; }
+    .addBlogModal .addBlogForm input,
+    .addBlogModal .addBlogForm textarea {
+      display: inline-block;
+      width: 100%;
+      height: 25px;
+      font-size: 18px;
+      margin-bottom: 10px; }
+    .addBlogModal .addBlogForm textarea {
+      height: 75px;
+      resize: vertical; }
+    .addBlogModal .addBlogForm .addBlogBtn {
+      display: block;
+      width: 150px;
+      height: 40px;
+      border-radius: 5px;
+      margin: 0 auto; }
+.modalContainer > div {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .modalContainer > div .modal {
+    margin: 300px auto;
+    padding: 15px;
+    width: 600px;
+    height: auto;
+    background: #ccd2dd;
+    border: 1px solid black; }
+  .modalContainer > div .closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 18px;
+    font-weight: bold; }
+.blogsAppContainer {
+  width: 40%;
+  padding: 20px 65px;
+  margin: 0 auto;
+  background: #50626C;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between; }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -66,76 +201,6 @@ a, u {
     position: relative;
     top: 1px; }
 
-.modalContainer > div {
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.4); }
-  .modalContainer > div .modal {
-    margin: 300px auto;
-    padding: 15px;
-    width: 600px;
-    height: auto;
-    background: #ccd2dd;
-    border: 1px solid black; }
-    .modalContainer > div .modal .closeBtn {
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: 18px;
-      font-weight: bold; }
-    .modalContainer > div .modal .deleteBlogModal {
-      position: relative; }
-      .modalContainer > div .modal .deleteBlogModal .message {
-        display: inline-block;
-        margin: 20px 0;
-        width: 100%;
-        text-align: center;
-        font-size: 18px; }
-      .modalContainer > div .modal .deleteBlogModal .buttonSet {
-        width: 60%;
-        margin: 15px auto;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-between; }
-        .modalContainer > div .modal .deleteBlogModal .buttonSet button {
-          display: inline-block;
-          width: 125px;
-          height: 40px;
-          border-radius: 5px; }
-    .modalContainer > div .modal .addBlogModal {
-      position: relative; }
-      .modalContainer > div .modal .addBlogModal .addBlogForm {
-        width: 450px;
-        margin: 0 auto;
-        padding: 30px 0; }
-        .modalContainer > div .modal .addBlogModal .addBlogForm label {
-          display: inline-block;
-          width: 100%;
-          font-size: 18px;
-          margin-bottom: 3px; }
-        .modalContainer > div .modal .addBlogModal .addBlogForm input,
-        .modalContainer > div .modal .addBlogModal .addBlogForm textarea {
-          display: inline-block;
-          width: 100%;
-          height: 25px;
-          font-size: 18px;
-          margin-bottom: 10px; }
-        .modalContainer > div .modal .addBlogModal .addBlogForm textarea {
-          height: 75px;
-          resize: vertical; }
-        .modalContainer > div .modal .addBlogModal .addBlogForm .addBlogBtn {
-          display: block;
-          width: 150px;
-          height: 40px;
-          border-radius: 5px;
-          margin: 0 auto; }
-
 html, body {
   height: 100%; }
 
@@ -143,71 +208,5 @@ body {
   background: #d3afaf;
   font-size: 16px;
   font-family: Arial; }
-  body .container {
-    width: 40%;
-    padding: 20px 65px;
-    margin: 0 auto;
-    background: #50626C;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: space-between; }
-    body .container .addBlogBtn {
-      width: 65%;
-      height: 45px;
-      border-radius: 15px; }
-    body .container .searchBlog {
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      margin: 20px 0; }
-      body .container .searchBlog .searchBlogInput {
-        flex-basis: 70%;
-        height: 35px;
-        font-size: 20px; }
-      body .container .searchBlog .searchBlogOption {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: center;
-        flex-basis: 25%; }
-        body .container .searchBlog .searchBlogOption label {
-          flex-basis: 100%;
-          color: white;
-          cursor: pointer; }
-    body .container .blogList {
-      display: flex;
-      flex-flow: column wrap;
-      align-items: center;
-      justify-content: center; }
-      body .container .blogList .blogBox {
-        position: relative;
-        box-sizing: border-box;
-        width: 100%;
-        background: #ccd2dd;
-        border-radius: 5px;
-        padding: 15px;
-        margin-bottom: 10px; }
-        body .container .blogList .blogBox .blogInfo {
-          display: flex;
-          flex-flow: row wrap;
-          align-items: flex-start; }
-          body .container .blogList .blogBox .blogInfo dt {
-            flex-basis: 20%;
-            margin-bottom: 5px;
-            font-weight: bold; }
-          body .container .blogList .blogBox .blogInfo dd {
-            flex-basis: 80%;
-            margin-bottom: 5px;
-            text-align: justify; }
-        body .container .blogList .blogBox .removeBlog {
-          position: absolute;
-          top: 12px;
-          right: 12px;
-          font-size: 20px;
-          font-weight: bold;
-          color: #961e1e; }
 
 /*# sourceMappingURL=style.css.map*/
