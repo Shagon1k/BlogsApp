@@ -1,4 +1,5 @@
 import React from 'react';
+import Portal from '../../Portal.jsx'
 import './styles.scss';
 
 class AddBlogModal extends React.Component {
@@ -34,18 +35,20 @@ class AddBlogModal extends React.Component {
 
 	render() {
 		return (
-			<div className="addBlogModal">
-				<a href="#" className="closeBtn" onClick={() => this.props.onClose()}> X </a>
-				<form className="addBlogForm" onSubmit={(e) => this.handleSubmit(e)}>
-					<label htmlFor="inputTitle">Title:</label>
-					<input name="title" id="inputTitle" type="text" value={this.state.title} onChange={(e) => this.handleInputChange(e)} />
-					<label htmlFor="inputAuthor">Author:</label>
-					<input name="author" id="inputAuthor" type="text" value={this.state.author} onChange={(e) => this.handleInputChange(e)} />
-					<label htmlFor="inputMessage">Message:</label>
-					<textarea name="message" id="inputMessage" value={this.state.message} onChange={(e) => this.handleInputChange(e)} />
-					<button className="addBlogBtn btn">Add blog</button>
-				</form>
-			</div>
+			<Portal>
+				<div className="addBlogModal">
+					<a href="#" className="closeBtn" onClick={() => this.props.onClose()}> X </a>
+					<form className="addBlogForm" onSubmit={(e) => this.handleSubmit(e)}>
+						<label htmlFor="inputTitle">Title:</label>
+						<input name="title" id="inputTitle" type="text" value={this.state.title} onChange={(e) => this.handleInputChange(e)} />
+						<label htmlFor="inputAuthor">Author:</label>
+						<input name="author" id="inputAuthor" type="text" value={this.state.author} onChange={(e) => this.handleInputChange(e)} />
+						<label htmlFor="inputMessage">Message:</label>
+						<textarea name="message" id="inputMessage" value={this.state.message} onChange={(e) => this.handleInputChange(e)} />
+						<button className="addBlogBtn btn">Add blog</button>
+					</form>
+				</div>
+			</Portal>
 			);
 	}
 }

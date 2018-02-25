@@ -12,7 +12,7 @@ const Blog = ({blog, blogId, onDelete}) => (
 			<dt> Message: </dt>
 			<dd> {blog.message}</dd>
 		</dl>
-		<a href="#" className="removeBlog" onClick={() => onDelete()}> X </a>
+		<Link to={`/blogs/remove/${blogId}`} className="removeBlog"> X </Link>
 		<Link className="blogDetailsLink" to={`/blog/${blogId}`}> Blog details </Link>
 	</li>
 )

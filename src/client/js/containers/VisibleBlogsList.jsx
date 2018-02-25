@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteBlog, openModal } from '../actions';
+import { deleteBlog } from '../actions';
 import BlogsList from '../components/BlogsList/index.jsx';
 
 const getVisibleBlogs = (blogs, search) => {
@@ -13,29 +13,13 @@ const getVisibleBlogs = (blogs, search) => {
 	return blogs.filter(i => i.blog[searchParam].includes(search.searchValue))
 }
 
-const mapStateToProps = state => {
-	return {
-		blogs: getVisibleBlogs(state.blogs, state.search)
-	}
-}
-
-const mapDispatchToProps = dispatch => {
-	return {
-		onBlogDelete: (id, blog) => {
-			dispatch(openModal({
-				id: id,
-				type: 'confirmation',
-				message: `Are you sure to delete ${blog.title}?`,
-				onConfirm: () => {dispatch(deleteBlog(id))}
-				})
-			)
-		}
-	}
-}
+const mapStateToProps = state => ({
+	blogs: getVisibleBlogs(state.blogs, state.search)
+})
 
 const VisibleBlogsList = connect(
 	mapStateToProps,
-	mapDispatchToProps
+	null
 )(BlogsList)
 
 export default VisibleBlogsList;

@@ -1,22 +1,18 @@
 import { connect } from 'react-redux';
-import { addBlog, openModal } from '../actions';
-import AddBlogButton from '../components/AddBlogButton/index.jsx'
+import { addBlog } from '../actions';
+import AddBlogModal from '../components/modals/AddBlogModal/index.jsx';
 
-const mapDispatchToProps = dispatch => {
-	return {
-		onBlogAdd: () => {
-			dispatch(openModal({
-				type: 'add-blog',
-				onConfirm: (blog) => {dispatch(addBlog(blog))}
-				})
-			)
-		}
-	}
-}
+const mapStateToProps = (state, ownProps) => ({
+	onClose: () => {ownProps.history.push('/blogs')}
+})
+
+const mapDispatchToProps = dispatch => ({
+		onConfirm: (blog) => {dispatch(addBlog(blog))}
+})
 
 const AddBlog = connect(
-	null,
+	mapStateToProps,
 	mapDispatchToProps
-)(AddBlogButton)
+)(AddBlogModal)
 
 export default AddBlog;
