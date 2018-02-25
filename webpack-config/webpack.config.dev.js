@@ -12,7 +12,9 @@ module.exports = merge(common, {
 		host: 'localhost',
 		disableHostCheck: true,
 		compress: true,
-		open: true
+		open: true,
+		historyApiFallback: true,
+		contentBase: './'
 	},
 	plugins: [
 		new webpack.NamedModulesPlugin(),

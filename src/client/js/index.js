@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import blogsApp from './reducers';
 import App from './components/App.jsx';
+import { BrowserRouter as Router } from 'react-router-dom';
 import '../styles/main.scss';
 
 const initialState = {
@@ -48,7 +49,9 @@ const store = createStore(blogsApp, initialState);
 
 render(
 	<Provider store={store}>
-		<App />
+		<Router path='/'>
+			<App />
+		</Router>
 	</Provider>,
 	document.getElementById("app")
 );
