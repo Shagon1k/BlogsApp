@@ -1,44 +1,19 @@
 import React from "react";
 
-class SearchBlog extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-            value: '',
-            option: 'title'
-        };
-	}
-
-	handleChange(e) {
-		this.setState({value: e.target.value}, function() {
-			this.props.onSearchChange(this.state)
-		})
-	}
-
-	handleOptionChange(e) {
-		this.setState({option: e.target.value}, function() {
-			this.props.onSearchChange(this.state)
-		})
-	}
-
-	render() {
-		return (
+const SearchBlog = ({search, onValueChange, onParamChange}) => (
 			<div className="searchBlog">
-                <input className="searchBlogInput" type="text" placeholder="Search" value={this.state.value} onChange={(e) => this.handleChange(e)} />
+                <input className="searchBlogInput" type="text" placeholder="Search" value={search.searchValue} onChange={(e) => onValueChange(e.target.value)} />
             	<form className="searchBlogOption">
             		<label>
-            			<input type="radio" value="title" checked={this.state.option === 'title'} onChange={(e) => this.handleOptionChange(e)} />
+            			<input type="radio" value="BY_TITLE" checked={search.searchParam === 'BY_TITLE'} onChange={(e) => onParamChange(e.target.value)} />
             			by title
             		</label>
             		<label>
-            			<input type="radio" value="author" checked={this.state.option === 'author'} onChange={(e) => this.handleOptionChange(e)} />
+            			<input type="radio" value="BY_AUTHOR" checked={search.searchParam === 'BY_AUTHOR'} onChange={(e) => onParamChange(e.target.value)} />
             			by author
             		</label>
             	</form>
             </div>
-			);
-	}
-}
+	)
 
 export default SearchBlog;

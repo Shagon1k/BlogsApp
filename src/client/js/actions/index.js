@@ -12,7 +12,7 @@ function genId() {
 export const addBlog = blog => {
 	return {
 		type: ADD_BLOG,
-		id: genId,
+		id: genId(),
 		blog
 	}
 }
@@ -38,14 +38,14 @@ export const setSearchParam = param => {
 	}
 }
 
-export const openModal = obj => {
+export const openModal = modalObject => {
 	return {
 		type: OPEN_MODAL,
 		modalObject
 	}
 } 
 
-export const closeModal = obj => {
+export const closeModal = modalObject => {
 	return {
 		type: CLOSE_MODAL,
 		modalObject

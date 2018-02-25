@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class AddBlogModal extends React.Component {
 	constructor(props) {
@@ -9,11 +9,6 @@ class AddBlogModal extends React.Component {
 			author: '',
 			message: ''
 		}
-	}
-
-	closeAddBlog(e) {
-		e.preventDefault();
-		this.props.closeAddBlogModal();
 	}
 
 	handleInputChange(e) {
@@ -28,18 +23,18 @@ class AddBlogModal extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		if (!this.state.title || !this.state.author || !this.state.message) return;
-		this.props.onAddBlog({
+		this.props.onConfirm({
 			title: this.state.title,
 			author: this.state.author,
 			message: this.state.message
 		})
-		this.props.closeAddBlogModal();
+		this.props.onClose();
 	}
 
 	render() {
 		return (
 			<div className="addBlogModal">
-				<a href="#" className="closeBtn" onClick={(e) => this.closeAddBlog(e)}> X </a>
+				<a href="#" className="closeBtn" onClick={() => this.props.onClose()}> X </a>
 				<form className="addBlogForm" onSubmit={(e) => this.handleSubmit(e)}>
 					<label htmlFor="inputTitle">Title:</label>
 					<input name="title" id="inputTitle" type="text" value={this.state.title} onChange={(e) => this.handleInputChange(e)} />

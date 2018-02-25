@@ -2,13 +2,14 @@ const blogs = (state = [], action) => {
 	switch (action.type) {
 		case 'ADD_BLOG':
 			return [
-				...state,
 				{
 					id: action.id,
 					blog: action.blog
-				}
+				},
+				...state
+				
 			]
-		case 'REMOVE_BLOG':
+		case 'DELETE_BLOG':
 			return state.filter(elem => elem.id !== action.id)
 		default:
 			return state
