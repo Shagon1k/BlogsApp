@@ -5,15 +5,13 @@ import RemoveBlogModal from '../../components/BlogsApp/modals/RemoveBlogModal/in
 const mapStateToProps = (state, ownProps) => {
 	const blogObj = state.blogs.find((i) => i.id === ownProps.match.params.id);
 	return {
-		onClose: () => {ownProps.history.push('/blogs')},
-		message: `Do you really want to delete ${blogObj.blog.title} blog`
+		blogTitle: blogObj.blog.title
 	}
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
 	onConfirm: () => {
 		dispatch(deleteBlog(ownProps.match.params.id));
-		ownProps.history.push('/blogs');
 	}
 })
 

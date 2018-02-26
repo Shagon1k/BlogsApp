@@ -30,14 +30,19 @@ class AddBlogModal extends React.Component {
 			author: this.state.author,
 			message: this.state.message
 		})
-		this.props.onClose();
+		this.props.history.push('/blogs');
+	}
+
+	onClose(e) {
+		e.preventDefault();
+		this.props.history.push('/blogs');
 	}
 
 	render() {
 		return (
 			<Portal>
 				<div className="addBlogModal">
-					<a href="#" className="closeBtn" onClick={() => this.props.onClose()}> X </a>
+					<a href="#" className="closeBtn" onClick={(e) => this.onClose(e)}> X </a>
 					<form className="addBlogForm" onSubmit={(e) => this.handleSubmit(e)}>
 						<label htmlFor="inputTitle">Title:</label>
 						<input name="title" id="inputTitle" type="text" value={this.state.title} onChange={(e) => this.handleInputChange(e)} />
