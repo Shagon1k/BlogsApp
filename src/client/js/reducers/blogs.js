@@ -1,10 +1,10 @@
 import { loop, Cmd } from 'redux-loop';
-import { blogsInitSuccessful, blogsInitFail, deleteBlog, failedRequest } from '../actions';
-import { SERVER_URL } from '../config.js';
+import { blogsInitSuccessful, blogsInitFail, deleteBlog, addBlog, failedRequest } from '../actions';
+import { SERVER_URL, actionTypes } from '../config.js';
 
 const blogs = (state = [], action) => {
 	switch (action.type) {
-		case 'FETCH_BLOGS':
+		case actionTypes.FETCH_BLOGS:
 			return loop(
 				state,
 				Cmd.run(fetchBlogs, {
@@ -12,30 +12,37 @@ const blogs = (state = [], action) => {
 					failActionCreator: blogsInitFail
 				})
 			);
-		case 'FETCH_BLOGS_SUCCESSFUL':
+		case actionTypes.FETCH_BLOGS_SUCCESSFUL:
 			return normalizeBlogsData(action.blogs)
-		case 'FETCH_BLOGS_FAILED':
+		case actionTypes.FETCH_BLOGS_FAILED:
 			return state
-		case 'ADD_BLOG':
+		case actionTypes.REQUEST_ADD_BLOG:
+			return loop(
+				state,
+				Cmd.run(requestAddBlog, {
+					successActionCreator: addBlog,
+					failActionCreator: failedRequest,
+					args: [action.blog]
+				}))
+		case actionTypes.ADD_BLOG:
 			return [
 				{
 					id: action.id,
 					blog: action.blog
 				},
 				...state
-				
 			]
-		case 'SEND_REQUEST_DELETE_BLOG':
+		case actionTypes.REQUEST_DELETE_BLOG:
 			return loop(
 				state,
-				Cmd.run(deleteBlogCall, {
+				Cmd.run(requestDeleteBlog, {
 					successActionCreator: deleteBlog,
 					failActionCreator: failedRequest,
 					args: [action.id]
 				}))
-		case 'DELETE_BLOG':
+		case actionTypes.DELETE_BLOG:
 			return state.filter(elem => elem.id !== action.id)
-		case 'FAILED_REQUEST': 
+		case actionTypes.FAILED_REQUEST: 
 			return state
 		default:
 			return state
@@ -44,12 +51,37 @@ const blogs = (state = [], action) => {
 
 function fetchBlogs() {
 	return fetch(`${SERVER_URL}/blogs`)
-		.then(resp => {
-			return resp.json();
+		.then(resp => resp.json())
+}
+
+function requestAddBlog(blog) {
+	return fetch(`${SERVER_URL}/blogs/`, {
+			method: 'put',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				title: blog.title,
+				author: blog.author,
+				message: blog.message
+			})
+		})
+		.then(resp => resp.json())
+		.then((resp) => {
+			return {
+				id: resp.blog._id,
+				blog: {
+					title: resp.blog.title,
+					author: resp.blog.author,
+					message: resp.blog.message,
+					date: resp.blog.date
+				}
+			}
 		})
 }
 
-function deleteBlogCall(blogId) {
+function requestDeleteBlog(blogId) {
 	return fetch(`${SERVER_URL}/blogs/${blogId}`, {
 		method: 'delete'
 	}).then(() => blogId)
@@ -63,12 +95,15 @@ function normalizeBlogsData(blogsData) {
 			blog: {
 				title: i.title,
 				author: i.author,
-				message: i.message
+				message: i.message,
+				date: i.date
 			}
 		})
 	})
 
-	return normBlogsData;
+	return normBlogsData.sort((blog1, blog2) => {
+		return new Date(blog2.blog.date) - new Date(blog1.blog.date);
+	});
 }
 
 export default blogs

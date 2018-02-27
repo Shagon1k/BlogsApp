@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { addBlog } from '../../actions';
+import { requestAddBlog } from '../../actions';
 import AddBlogModal from '../../components/BlogsApp/modals/AddBlogModal/index.jsx';
 
 const mapDispatchToProps = dispatch => ({
-		onConfirm: (blog) => {dispatch(addBlog(blog))}
+		onConfirm: (blog) => {dispatch(requestAddBlog(blog))}
 })
 
 const AddBlog = connect(
