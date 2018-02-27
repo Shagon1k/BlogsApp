@@ -54,7 +54,7 @@ class AddBlogModal extends React.Component {
 					</form>
 				</div>
 			</Portal>
-			);
+		);
 	}
 }
 

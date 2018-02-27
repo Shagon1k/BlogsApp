@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteBlog } from '../../actions';
+import { initBlogs } from '../../actions';
 import BlogsList from '../../components/BlogsApp/BlogsList/index.jsx';
 
 const getVisibleBlogs = (blogs, search) => {
@@ -9,7 +9,7 @@ const getVisibleBlogs = (blogs, search) => {
 	} else if (search.searchParam === 'BY_AUTHOR') {
 		searchParam = 'author';
 	}
-
+	
 	return blogs.filter(i => i.blog[searchParam].includes(search.searchValue))
 }
 
@@ -17,9 +17,15 @@ const mapStateToProps = state => ({
 	blogs: getVisibleBlogs(state.blogs, state.search)
 })
 
+const mapDispatchToProps = dispatch => ({
+	initBlogs: () => {
+		dispatch(initBlogs());
+	}
+})
+
 const VisibleBlogsList = connect(
 	mapStateToProps,
-	null
+	mapDispatchToProps
 )(BlogsList)
 
 export default VisibleBlogsList;

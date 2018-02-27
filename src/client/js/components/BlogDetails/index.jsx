@@ -13,6 +13,8 @@ const BlogDetails = ({blog}) => {
 					<dd> {blog.author} </dd>
 					<dt> Message: </dt>
 					<dd> {blog.message}</dd>
+					<dt> Date: </dt>
+					<dd> {(new Date(blog.date)).toLocaleString()}</dd>
 				</dl>
 				<Link to='/blogs'>Blogs main</Link>
 			</div>
