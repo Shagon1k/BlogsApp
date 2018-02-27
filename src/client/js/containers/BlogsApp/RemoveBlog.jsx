@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteBlog } from '../../actions';
+import { sendRequestDeleteBlog } from '../../actions';
 import RemoveBlogModal from '../../components/BlogsApp/modals/RemoveBlogModal/index.jsx';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
 	onConfirm: () => {
-		dispatch(deleteBlog(ownProps.match.params.id));
+		dispatch(sendRequestDeleteBlog(ownProps.match.params.id));
 	}
 })
 

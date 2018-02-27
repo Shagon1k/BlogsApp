@@ -1,20 +1,22 @@
-const INIT_BLOGS = 'INIT_BLOGS';
-const BLOGS_INIT_SUCCESSFUL = 'BLOGS_INIT_SUCCESSFUL';
-const BLOGS_INIT_FAILED = 'BLOGS_INIT_FAILED';
+const FETCH_BLOGS = 'FETCH_BLOGS';
+const FETCH_BLOGS_SUCCESSFUL = 'FETCH_BLOGS_SUCCESSFUL';
+const FETCH_BLOGS_FAILED = 'FETCH_BLOGS_FAILED';
 const ADD_BLOG = 'ADD_BLOG';
+const SEND_REQUEST_DELETE_BLOG = 'SEND_REQUEST_DELETE_BLOG';
 const DELETE_BLOG = 'DELETE_BLOG';
+const FAILED_REQUEST = 'FAILED_REQUEST';
 const SET_SEARCH_VALUE = 'SET_SEARCH_VALUE';
 const SET_SEARCH_PARAM = 'SET_SEARCH_PARAM';
 
 export const initBlogs = () => {
 	return {
-		type: INIT_BLOGS
+		type: FETCH_BLOGS
 	}
 }
 
 export const blogsInitSuccessful = resp => {
 	return {
-		type: BLOGS_INIT_SUCCESSFUL,
+		type: FETCH_BLOGS_SUCCESSFUL,
 		blogs: resp.blogs
 	}
 }
@@ -22,7 +24,7 @@ export const blogsInitSuccessful = resp => {
 export const blogsInitFail = () => {
 	throw new Error('Blogs initialization was failed');
 	return {
-		type: BLOGS_INIT_FAILED
+		type: FETCH_BLOGS_FAILED
 	}
 }
 
@@ -34,13 +36,27 @@ export const addBlog = blog => {
 	}
 }
 
+export const sendRequestDeleteBlog = id => {
+	return {
+		type: SEND_REQUEST_DELETE_BLOG,
+		id
+	}
+}
+
 export const deleteBlog = id => {
 	return {
 		type: DELETE_BLOG,
 		id
 	}
 }
- 
+
+export const failedRequest = () => {
+	throw new Error('Failed request');
+	return {
+		type: FAILED_REQUEST
+	}
+}
+
 export const setSearchValue = value => {
 	return {
 		type: SET_SEARCH_VALUE,

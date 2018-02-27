@@ -1,10 +1,10 @@
 import { loop, Cmd } from 'redux-loop';
-import { blogsInitSuccessful, blogsInitFail } from '../actions';
+import { blogsInitSuccessful, blogsInitFail, deleteBlog, failedRequest } from '../actions';
 import { SERVER_URL } from '../config.js';
 
 const blogs = (state = [], action) => {
 	switch (action.type) {
-		case 'INIT_BLOGS':
+		case 'FETCH_BLOGS':
 			return loop(
 				state,
 				Cmd.run(fetchBlogs, {
@@ -12,9 +12,9 @@ const blogs = (state = [], action) => {
 					failActionCreator: blogsInitFail
 				})
 			);
-		case 'BLOGS_INIT_SUCCESSFUL':
+		case 'FETCH_BLOGS_SUCCESSFUL':
 			return normalizeBlogsData(action.blogs)
-		case 'BLOGS_INIT_FAILED':
+		case 'FETCH_BLOGS_FAILED':
 			return state
 		case 'ADD_BLOG':
 			return [
@@ -25,8 +25,18 @@ const blogs = (state = [], action) => {
 				...state
 				
 			]
+		case 'SEND_REQUEST_DELETE_BLOG':
+			return loop(
+				state,
+				Cmd.run(deleteBlogCall, {
+					successActionCreator: deleteBlog,
+					failActionCreator: failedRequest,
+					args: [action.id]
+				}))
 		case 'DELETE_BLOG':
 			return state.filter(elem => elem.id !== action.id)
+		case 'FAILED_REQUEST': 
+			return state
 		default:
 			return state
 	}
@@ -35,8 +45,14 @@ const blogs = (state = [], action) => {
 function fetchBlogs() {
 	return fetch(`${SERVER_URL}/blogs`)
 		.then(resp => {
-    		return resp.json();
-    	})
+			return resp.json();
+		})
+}
+
+function deleteBlogCall(blogId) {
+	return fetch(`${SERVER_URL}/blogs/${blogId}`, {
+		method: 'delete'
+	}).then(() => blogId)
 }
 
 function normalizeBlogsData(blogsData) {
