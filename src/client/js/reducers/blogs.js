@@ -50,13 +50,16 @@ const blogs = (state = [], action) => {
 }
 
 function fetchBlogs() {
-	return fetch(`${SERVER_URL}/blogs`)
+	return fetch(`${SERVER_URL}/blogs`, {
+			credentials: 'include'
+		})
 		.then(resp => resp.json())
 }
 
 function requestAddBlog(blog) {
 	return fetch(`${SERVER_URL}/blogs/`, {
 			method: 'put',
+			credentials: 'include',
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
@@ -83,6 +86,7 @@ function requestAddBlog(blog) {
 
 function requestDeleteBlog(blogId) {
 	return fetch(`${SERVER_URL}/blogs/${blogId}`, {
+		credentials: 'include',
 		method: 'delete'
 	}).then(() => blogId)
 }
@@ -106,4 +110,4 @@ function normalizeBlogsData(blogsData) {
 	});
 }
 
-export default blogs
+export default blogs;
