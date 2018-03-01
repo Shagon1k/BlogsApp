@@ -35,18 +35,18 @@ class LoginForm extends React.Component {
 		return (
 			<div className="loginFormContainer">
 				{this.props.isLoggedIn ?
-					<div>
+					<span className="infoText">
 						You are already logged in!
-					</div> : 
+					</span> : 
 					<form className="loginForm" onSubmit={(e) => this.handleSubmit(e)}>
 						<label htmlFor="inputUsername">Username:</label>
 						<input name="username" id="inputUsername" type="text" value={this.state.username} onChange={(e) => this.handleInputChange(e)} />
 						<label htmlFor="inputPassword">Password:</label>
-						<input name="password" id="inputPassword" type="text" value={this.state.password} onChange={(e) => this.handleInputChange(e)} />
+						<input name="password" id="inputPassword" type="password" value={this.state.password} onChange={(e) => this.handleInputChange(e)} />
 						<button className="loginBtn btn">Login</button>
 					</form>
 				}
-				<Link to="/">Home Page</Link>
+				<Link className="lnk" to="/">Home Page</Link>
 			</div>
 		);
 	}

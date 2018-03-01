@@ -1,10 +1,18 @@
 .blogsAppContainer {
+	position: relative;
 	width: 40%;
-	padding: 20px 65px;
+	padding: 40px 65px 20px 65px;
 	margin: 0 auto;
 	background: #50626C;
 	display: flex;
 	flex-flow: column wrap;
 	align-items: center;
 	justify-content: space-between;
+
+	.homePageLnk {
+		font-size: 16px;
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
 }
