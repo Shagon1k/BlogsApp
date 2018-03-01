@@ -36,7 +36,7 @@ class LoginForm extends React.Component {
 			<div className="loginFormContainer">
 				{this.props.isLoggedIn ?
 					<span className="infoText">
-						You are already logged in!
+						You are logged in!
 					</span> : 
 					<form className="loginForm" onSubmit={(e) => this.handleSubmit(e)}>
 						<label htmlFor="inputUsername">Username:</label>

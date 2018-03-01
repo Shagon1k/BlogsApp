@@ -1,6 +1,7 @@
 import { loop, Cmd } from 'redux-loop';
 import { login, logout, register, failedRequest } from '../actions';
-import { SERVER_URL, actionTypes } from '../config.js';
+import { requestLogin, requestLogout, requestRegister } from '../effects/authentication.js';
+import { actionTypes } from '../config.js';
 
 const authentication = (state = {isLoggedIn: false, user: null}, action) => {
 	switch (action.type) {
@@ -46,53 +47,3 @@ const authentication = (state = {isLoggedIn: false, user: null}, action) => {
 }
 
 export default authentication;
-
-function requestLogin(userform) {
-	return fetch(`${SERVER_URL}/users/login`, {
-			method: 'post',
-			credentials: 'include',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(userform)
-		})
-		.then(resp => resp.json())
-		.then((resp) => {
-			return {
-				username: resp.user.username,
-				email: resp.user.email
-			};
-		})
-}
-
-function requestLogout() {
-	return fetch(`${SERVER_URL}/users/logout`, {
-			method: 'post',
-			credentials: 'include',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			}
-		})
-		.then(resp => resp.json())
-		.then((resp) => {
-			return resp.success;
-		})
-}
-
-function requestRegister(regform) {
-		return fetch(`${SERVER_URL}/users/register`, {
-			method: 'post',
-			credentials: 'include',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(regform)
-		})
-		.then(resp => resp.json())
-		.then((resp) => {
-			return resp.success;
-		})
-}
