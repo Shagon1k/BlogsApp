@@ -33,7 +33,7 @@ exports[`BlogDetails component renders blogs details correctly 1`] = `
     </dt>
     <dd>
        
-      3/1/2018, 4:37:08 PM
+      2018-3-1 16:37:08
     </dd>
   </dl>
   <Link

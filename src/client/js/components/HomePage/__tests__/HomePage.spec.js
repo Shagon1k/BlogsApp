@@ -1,6 +1,5 @@
 import React from 'react';
 import HomePage from '../index.jsx';
-import StaticRouter from 'react-router';
 
 describe('HomePage component', () => {
 	const user = {
