@@ -1,13 +1,13 @@
 import { SERVER_URL } from '../config.js';
 
-export const fetchBlogs = () =>
+export const fetchBlogsCall = () =>
 	fetch(`${SERVER_URL}/blogs`, {
 		credentials: 'include'
 	})
 	.then(resp => resp.json())
 
 
-export const requestAddBlog = blog =>
+export const requestAddBlogCall = blog =>
 	fetch(`${SERVER_URL}/blogs/`, {
 		method: 'put',
 		credentials: 'include',
@@ -34,7 +34,7 @@ export const requestAddBlog = blog =>
 		}
 	})
 
-export const requestDeleteBlog = blogId => 
+export const requestDeleteBlogCall = blogId => 
 	fetch(`${SERVER_URL}/blogs/${blogId}`, {
 		credentials: 'include',
 		method: 'delete'

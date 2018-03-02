@@ -1,6 +1,6 @@
 import { loop, Cmd } from 'redux-loop';
 import { login, logout, register, failedRequest } from '../actions';
-import { requestLogin, requestLogout, requestRegister } from '../effects/authentication.js';
+import { requestLoginCall, requestLogoutCall, requestRegisterCall } from '../effects/authentication.js';
 import { actionTypes } from '../config.js';
 
 const authentication = (state = {isLoggedIn: false, user: null}, action) => {
@@ -8,7 +8,7 @@ const authentication = (state = {isLoggedIn: false, user: null}, action) => {
 		case actionTypes.REQUEST_LOGIN:
 			return loop(
 				state,
-				Cmd.run(requestLogin, {
+				Cmd.run(requestLoginCall, {
 					successActionCreator: login,
 					failActionCreator: failedRequest,
 					args: [action.userform]
@@ -21,7 +21,7 @@ const authentication = (state = {isLoggedIn: false, user: null}, action) => {
 		case actionTypes.REQUEST_LOGOUT:
 			return loop(
 				state,
-				Cmd.run(requestLogout, {
+				Cmd.run(requestLogoutCall, {
 					successActionCreator: logout,
 					failActionCreator: failedRequest
 				}))
@@ -34,7 +34,7 @@ const authentication = (state = {isLoggedIn: false, user: null}, action) => {
 		case actionTypes.REQUEST_REGISTER:
 			return loop(
 				state,
-				Cmd.run(requestRegister, {
+				Cmd.run(requestRegisterCall, {
 					successActionCreator: register,
 					failActionCreator: failedRequest,
 					args: [action.regform]

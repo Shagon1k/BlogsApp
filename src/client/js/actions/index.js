@@ -55,7 +55,6 @@ export const blogsInitSuccessful = resp => {
 }
 
 export const blogsInitFail = () => {
-	throw new Error('Blogs initialization was failed');
 	return {
 		type: actionTypes.FETCH_BLOGS_FAILED
 	}
@@ -91,7 +90,6 @@ export const deleteBlog = id => {
 }
 
 export const failedRequest = () => {
-	throw new Error('Failed request');
 	return {
 		type: actionTypes.FAILED_REQUEST
 	}

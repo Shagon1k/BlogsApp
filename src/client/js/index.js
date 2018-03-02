@@ -20,9 +20,7 @@ const enhancer = composeEnhancers(
 	install()
 );
 
-const store = createStore(appReducer, 
-	loadState(),
-	enhancer);
+const store = createStore(appReducer, loadState(), enhancer);
 
 store.subscribe(() => saveState(store.getState()));
 

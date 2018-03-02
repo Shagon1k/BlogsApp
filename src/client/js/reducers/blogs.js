@@ -1,6 +1,6 @@
 import { loop, Cmd } from 'redux-loop';
 import { blogsInitSuccessful, blogsInitFail, deleteBlog, addBlog, failedRequest } from '../actions';
-import { fetchBlogs, requestAddBlog, requestDeleteBlog, normalizeBlogsData } from '../effects/blogs.js';
+import { fetchBlogsCall, requestAddBlogCall, requestDeleteBlogCall, normalizeBlogsData } from '../effects/blogs.js';
 import { actionTypes } from '../config.js';
 
 const blogs = (state = [], action) => {
@@ -8,7 +8,7 @@ const blogs = (state = [], action) => {
 		case actionTypes.FETCH_BLOGS:
 			return loop(
 				state,
-				Cmd.run(fetchBlogs, {
+				Cmd.run(fetchBlogsCall, {
 					successActionCreator: blogsInitSuccessful,
 					failActionCreator: blogsInitFail
 				})
@@ -20,7 +20,7 @@ const blogs = (state = [], action) => {
 		case actionTypes.REQUEST_ADD_BLOG:
 			return loop(
 				state,
-				Cmd.run(requestAddBlog, {
+				Cmd.run(requestAddBlogCall, {
 					successActionCreator: addBlog,
 					failActionCreator: failedRequest,
 					args: [action.blog]
@@ -36,14 +36,14 @@ const blogs = (state = [], action) => {
 		case actionTypes.REQUEST_DELETE_BLOG:
 			return loop(
 				state,
-				Cmd.run(requestDeleteBlog, {
+				Cmd.run(requestDeleteBlogCall, {
 					successActionCreator: deleteBlog,
 					failActionCreator: failedRequest,
 					args: [action.id]
 				}))
 		case actionTypes.DELETE_BLOG:
 			return state.filter(elem => elem.id !== action.id)
-		case actionTypes.FAILED_REQUEST: 
+		case actionTypes.FAILED_REQUEST:
 			return state
 		default:
 			return state

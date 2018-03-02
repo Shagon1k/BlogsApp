@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage component renders "Please Log In or Register message" if user is not logged in 1`] = `
+<StaticRouter
+  basename=""
+  location="/"
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <HomePage
+      isLoggedIn={false}
+      onLogout={[MockFunction]}
+      user={null}
+    >
+      <div
+        className="homePage"
+      >
+        <div
+          className="homePageInner"
+        >
+          <span
+            className="infoText"
+          >
+            Hello! Welcome to BlogsApp!
+          </span>
+          <span
+            className="infoText"
+          >
+            Please 
+            <Link
+              className="lnk loginLnk"
+              replace={false}
+              to="/login"
+            >
+              <a
+                className="lnk loginLnk"
+                href="/login"
+                onClick={[Function]}
+              >
+                Log in
+              </a>
+            </Link>
+             or 
+            <Link
+              className="lnk registerLnk"
+              replace={false}
+              to="/register"
+            >
+              <a
+                className="lnk registerLnk"
+                href="/register"
+                onClick={[Function]}
+              >
+                Register
+              </a>
+            </Link>
+             to proceed.
+          </span>
+        </div>
+      </div>
+    </HomePage>
+  </Router>
+</StaticRouter>
+`;
+
+exports[`HomePage component renders "Welcome to BlogsApp" message if user is logged in 1`] = `
+<div
+  className="homePage"
+>
+  <div
+    className="homePageInner"
+  >
+    <span
+      className="infoText"
+    >
+      Hello, 
+      <span
+        className="userName"
+      >
+        Vasya
+      </span>
+      ! Welcome to BlogApps!
+    </span>
+    <span>
+      Feel free to check 
+      <Link
+        className="lnk blogsListLnk"
+        replace={false}
+        to="/blogs"
+      >
+        Blogs list
+      </Link>
+      .
+    </span>
+    <a
+      className="lnk logoutLink"
+      href="#"
+      onClick={[Function]}
+    >
+      Log out
+    </a>
+  </div>
+</div>
+`;

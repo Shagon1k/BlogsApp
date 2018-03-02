@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogDetails component renders blogs details correctly 1`] = `
+<div
+  className="blogDetails"
+>
+  <dl>
+    <dt>
+       Title: 
+    </dt>
+    <dd>
+       
+      title
+       
+    </dd>
+    <dt>
+       Author: 
+    </dt>
+    <dd>
+       
+      author
+       
+    </dd>
+    <dt>
+       Message: 
+    </dt>
+    <dd>
+       
+      message
+    </dd>
+    <dt>
+       Date: 
+    </dt>
+    <dd>
+       
+      3/1/2018, 4:37:08 PM
+    </dd>
+  </dl>
+  <Link
+    replace={false}
+    to="/blogs"
+  >
+    Blogs main
+  </Link>
+</div>
+`;
+
+exports[`BlogDetails component renders no blog info correctly 1`] = `
+<div>
+  No such blog
+</div>
+`;

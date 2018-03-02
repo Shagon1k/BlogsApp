@@ -1,6 +1,6 @@
 import { SERVER_URL } from '../config.js';
 
-export const requestLogin = userform => 
+export const requestLoginCall = userform => 
 	fetch(`${SERVER_URL}/users/login`, {
 		method: 'post',
 		credentials: 'include',
@@ -18,7 +18,7 @@ export const requestLogin = userform =>
 		};
 	})
 
-export const requestLogout = () => 
+export const requestLogoutCall = () => 
 	fetch(`${SERVER_URL}/users/logout`, {
 		method: 'post',
 		credentials: 'include',
@@ -33,7 +33,7 @@ export const requestLogout = () =>
 	})
 
 
-export const requestRegister = regform => 
+export const requestRegisterCall = regform => 
 	fetch(`${SERVER_URL}/users/register`, {
 		method: 'post',
 		credentials: 'include',
