@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogsList component renders correctly 1`] = `
+<ul
+  className="blogList"
+>
+  <Blog
+    blog={Object {}}
+    blogId={1}
+    key="1"
+  />
+  <Blog
+    blog={Object {}}
+    blogId={2}
+    key="2"
+  />
+  <Blog
+    blog={Object {}}
+    blogId={3}
+    key="3"
+  />
+</ul>
+`;

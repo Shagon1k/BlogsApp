@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog component renders correctly 1`] = `
+<li
+  className="blogBox"
+>
+  <dl
+    className="blogInfo"
+  >
+    <dt>
+       Title: 
+    </dt>
+    <dd>
+       
+      Ololo
+       
+    </dd>
+    <dt>
+       Author: 
+    </dt>
+    <dd>
+       
+      Ololosh
+       
+    </dd>
+    <dt>
+       Message: 
+    </dt>
+    <dd>
+       
+      Olomessage
+    </dd>
+  </dl>
+  <Link
+    className="removeBlog"
+    replace={false}
+    to="/blogs/remove/undefined"
+  >
+     X 
+  </Link>
+  <Link
+    className="blogDetailsLink"
+    replace={false}
+    to="/blog/undefined"
+  >
+     Blog details 
+  </Link>
+</li>
+`;

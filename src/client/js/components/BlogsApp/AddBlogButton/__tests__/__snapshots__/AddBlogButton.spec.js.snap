@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddBlogButton component renders correctly 1`] = `
+<Link
+  className="addBlog btn"
+  replace={false}
+  to="/blogs/add"
+>
+  Add blog
+</Link>
+`;

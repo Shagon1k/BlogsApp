@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm component renders "You are logged in!" if user is logged in 1`] = `
+<div
+  className="loginFormContainer"
+>
+  <span
+    className="infoText"
+  >
+    You are logged in!
+  </span>
+  <Link
+    className="lnk"
+    replace={false}
+    to="/"
+  >
+    Home Page
+  </Link>
+</div>
+`;
+
+exports[`LoginForm component renders login form if user is not logged in 1`] = `
+<div
+  className="loginFormContainer"
+>
+  <form
+    className="loginForm"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="inputUsername"
+    >
+      Username:
+    </label>
+    <input
+      id="inputUsername"
+      name="username"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label
+      htmlFor="inputPassword"
+    >
+      Password:
+    </label>
+    <input
+      id="inputPassword"
+      name="password"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <button
+      className="loginBtn btn"
+    >
+      Login
+    </button>
+  </form>
+  <Link
+    className="lnk"
+    replace={false}
+    to="/"
+  >
+    Home Page
+  </Link>
+</div>
+`;

@@ -1,0 +1,48 @@
+.registrationFormContainer {
+	position: absolute;
+	max-width: 35%;
+	height: 380px;
+	box-sizing: border-box;
+	padding: 20px;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: #50626C;
+	color: white;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: space-between;
+
+	.infoText {
+		font-size: 18px;
+	}
+
+	.registrationForm {
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		label {
+			font-size: 18px;
+			margin-bottom: 3px;
+		}
+
+		input,
+		textarea {
+			height: 25px;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		
+		.registerBtn {
+			width: 150px;
+			height: 40px;
+			border-radius: 5px;
+			margin: 0 auto;
+		}
+	}
+}

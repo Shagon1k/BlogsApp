@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogsApp component renders BlogsApp correctly 1`] = `
+<div
+  className="blogsAppContainer"
+>
+  <Link
+    className="lnk homePageLnk"
+    replace={false}
+    to="/"
+  >
+    Home Page
+  </Link>
+  <AddBlogBtn />
+  <Connect(SearchBlog) />
+  <Connect(BlogsList) />
+  <Route
+    component={[Function]}
+    path="/blogs/add"
+  />
+  <Route
+    component={[Function]}
+    path="/blogs/remove/:id"
+  />
+</div>
+`;

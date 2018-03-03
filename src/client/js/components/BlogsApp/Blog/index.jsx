@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-const Blog = ({blog, blogId, onDelete}) => (
+const Blog = ({blog, blogId}) => (
 	<li className="blogBox">
 		<dl className="blogInfo">
 			<dt> Title: </dt>

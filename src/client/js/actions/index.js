@@ -1,5 +1,46 @@
 import { actionTypes } from '../config.js';
 
+export const requestLogin = userform => {
+	return {
+		type: actionTypes.REQUEST_LOGIN,
+		userform
+	}
+}
+
+export const login = user => {
+	return {
+		type: actionTypes.LOGIN,
+		user
+	}
+}
+
+export const requestLogout = () => {
+	return {
+		type: actionTypes.REQUEST_LOGOUT
+	}
+}
+
+export const logout = isSucceed => {
+	return {
+		type: actionTypes.LOGOUT,
+		isSucceed
+	}
+}
+
+export const requestRegister = regform => {
+	return {
+		type: actionTypes.REQUEST_REGISTER,
+		regform
+	}
+}
+
+export const register = isSucceed => {
+	return {
+		type: actionTypes.REGISTER,
+		isSucceed
+	}
+}
+
 export const initBlogs = () => {
 	return {
 		type: actionTypes.FETCH_BLOGS
@@ -14,7 +55,6 @@ export const blogsInitSuccessful = resp => {
 }
 
 export const blogsInitFail = () => {
-	throw new Error('Blogs initialization was failed');
 	return {
 		type: actionTypes.FETCH_BLOGS_FAILED
 	}
@@ -50,7 +90,6 @@ export const deleteBlog = id => {
 }
 
 export const failedRequest = () => {
-	throw new Error('Failed request');
 	return {
 		type: actionTypes.FAILED_REQUEST
 	}

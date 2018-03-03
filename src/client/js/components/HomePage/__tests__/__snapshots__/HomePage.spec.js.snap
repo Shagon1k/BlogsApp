@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage component renders "Please Log In or Register message" if user is not logged in 1`] = `
+<div
+  className="homePage"
+>
+  <div
+    className="homePageInner"
+  >
+    <span
+      className="infoText"
+    >
+      Hello! Welcome to BlogsApp!
+    </span>
+    <span
+      className="infoText"
+    >
+      Please 
+      <Link
+        className="lnk loginLnk"
+        replace={false}
+        to="/login"
+      >
+        Log in
+      </Link>
+       or 
+      <Link
+        className="lnk registerLnk"
+        replace={false}
+        to="/register"
+      >
+        Register
+      </Link>
+       to proceed.
+    </span>
+  </div>
+</div>
+`;
+
+exports[`HomePage component renders "Welcome to BlogsApp" message if user is logged in 1`] = `
+<div
+  className="homePage"
+>
+  <div
+    className="homePageInner"
+  >
+    <span
+      className="infoText"
+    >
+      Hello, 
+      <span
+        className="userName"
+      >
+        Vasya
+      </span>
+      ! Welcome to BlogApps!
+    </span>
+    <span>
+      Feel free to check 
+      <Link
+        className="lnk blogsListLnk"
+        replace={false}
+        to="/blogs"
+      >
+        Blogs list
+      </Link>
+      .
+    </span>
+    <a
+      className="lnk logoutLink"
+      href="#"
+      onClick={[Function]}
+    >
+      Log out
+    </a>
+  </div>
+</div>
+`;
