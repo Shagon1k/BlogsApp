@@ -30,7 +30,7 @@ class RegistrationForm extends React.Component {
 			username: this.state.username,
 			email: this.state.email,
 			password: this.state.password,
-			password2: this.state.password2,
+			password2: this.state.password2
 		})
 	}
 
@@ -50,7 +50,7 @@ class RegistrationForm extends React.Component {
 						<input name="password" id="inputPassword" type="password" value={this.state.password} onChange={(e) => this.handleInputChange(e)} />
 						<label htmlFor="inputPassword2">Confirm password:</label>
 						<input name="password2" id="inputPassword2" type="password" value={this.state.password2} onChange={(e) => this.handleInputChange(e)} />
-						<button className="registerBtn btn">Register</button>
+						<button type="submit" className="registerBtn btn">Register</button>
 					</form>
 				}
 				<Link className="lnk" to="/">Home Page</Link>

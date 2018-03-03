@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemoveBlogModal component renders correctly 1`] = `
+<Portal>
+  <div
+    className="confirmModal"
+  >
+    <a
+      className="closeBtn"
+      href="#"
+      onClick={[Function]}
+    >
+       X 
+    </a>
+    <span
+      className="message"
+    >
+       Do you really want to delete 
+       blog?
+    </span>
+    <div
+      className="buttonSet"
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+      >
+        No
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+      >
+        Yes
+      </button>
+    </div>
+  </div>
+</Portal>
+`;

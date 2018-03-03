@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoPage component renders "No such page" correctly 1`] = `
+<div>
+  No such Page :(
+</div>
+`;

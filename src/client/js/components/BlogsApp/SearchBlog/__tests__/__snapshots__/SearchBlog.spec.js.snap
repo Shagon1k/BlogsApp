@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBlog component renders correctly 1`] = `
+<div
+  className="searchBlog"
+>
+  <input
+    className="searchBlogInput"
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+    value=""
+  />
+  <form
+    className="searchBlogOption"
+  >
+    <label>
+      <input
+        checked={true}
+        onChange={[Function]}
+        type="radio"
+        value="BY_TITLE"
+      />
+      by title
+    </label>
+    <label>
+      <input
+        checked={false}
+        onChange={[Function]}
+        type="radio"
+        value="BY_AUTHOR"
+      />
+      by author
+    </label>
+  </form>
+</div>
+`;
