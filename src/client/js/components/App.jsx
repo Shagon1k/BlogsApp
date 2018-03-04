@@ -15,11 +15,11 @@ const App = ({isLoggedIn}) => (
 			<Route key="register" path="/register" component={Registration} />
 			<Route key="home" exact path="/" component={HomePage} />
 			{!isLoggedIn ? <Redirect to="/login" /> : 
-				<Switch>
-					<Route key="blogs" path="/blogs" component={BlogsApp} />
-					<Route key="details" path="/blog/:id" component={BlogDetails} />
+				[
+					<Route key="blogs" path="/blogs" component={BlogsApp} />,
+					<Route key="details" path="/blog/:id" component={BlogDetails} />,
 					<Route key="nopage" path="*" component={NoPage} />
-				</Switch>
+				]
 			}
 		</Switch>
 	</div>

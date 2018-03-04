@@ -8,6 +8,7 @@ class BlogsList extends React.Component {
 		super(props);
 	}
 
+	//componentWILLmount, if we want use it on server
 	componentDidMount() {
 		this.props.initBlogs();
 	}

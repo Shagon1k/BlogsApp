@@ -1,4 +1,4 @@
-export const SERVER_URL = 'http://localhost:1337';
+export const SERVER_URL = 'http://192.168.100.9:1337';
 //http://192.168.100.9:1337
 //http://localhost:1337
 

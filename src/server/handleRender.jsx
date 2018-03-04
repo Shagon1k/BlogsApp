@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import Provider from 'react-redux';
+import { Provider } from 'react-redux';
 import configureStore from '../client/js/configureStore.js';
 import App from '../client/js/containers/App.jsx';
 
@@ -27,7 +27,7 @@ const renderFullPage = (html, preloadedState) => {
 				</html>`
 }
 
-const handleRender = (req, res, next) => {
+const handleRender = (req, res) => {
 	const store = configureStore();
 	const context = {};
 	const app = (
@@ -43,6 +43,7 @@ const handleRender = (req, res, next) => {
 		return res.redirect(context.url)
 	}
 
+	//If we need to get preloaded state from server, we can use id passed through window.__PRELOADED_STATE__
 	const preloadedState = store.getState();
 
 	return res.send(renderFullPage(renderedApp, preloadedState));

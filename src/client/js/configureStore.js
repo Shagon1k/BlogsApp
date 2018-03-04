@@ -9,8 +9,6 @@ const composeEnhancers =
 		  // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
 		}) : compose;
 
-
-
 export default (initialState) => {
 	const enhancer = composeEnhancers(
 		install()

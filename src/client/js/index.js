@@ -7,12 +7,17 @@ import { saveState, loadState } from './utils/appstate.js';
 import configureStore from './configureStore.js'
 import '../styles/main.scss';
 
-const initialState = loadState();
+let store;
+const savedLocalState = loadState();
 
-//initial state ===? window.PRELOADER_STATE
-//delete window.PRELOADED_STATE
+//If we need to get preloaded state from server, we can use id passed through window.__PRELOADED_STATE__
+if (savedLocalState) {
+	store = configureStore(savedLocalState);
+} else {
+	store = configureStore(window.PRELOADED_STATE)
+}
 
-const store = configureStore(initialState);
+delete window.PRELOADED_STATE
 
 store.subscribe(() => saveState(store.getState()));
 
