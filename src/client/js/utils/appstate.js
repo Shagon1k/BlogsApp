@@ -22,12 +22,12 @@ export const loadState = () => {
 	}
 }
 
-function getExpiryDate(date) {
+export function getExpiryDate(date) {
 	let expiryDate = date.setMinutes(date.getMinutes() + CACHE_EXPIRING_MINUTES);
 	return new Date(expiryDate);
 }
 
-function isValidCache(date) {
+export function isValidCache(date) {
 	let expiryDate = new Date(date),
 		currentDate = new Date();
 

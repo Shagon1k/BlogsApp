@@ -20,7 +20,7 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "scriptPreprocessor": "<rootDir>/node_modules/jest-css-modules",
+    "transform": {".*": "<rootDir>/node_modules/jest-css-modules"},
     "testEnvironment": "node"
   },
   "repository": {
