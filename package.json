@@ -43,7 +43,7 @@
   "homepage": "https://github.com/Shagon1k/BlogsApp#readme",
   "dependencies": {
     "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
+    "express": "^4.18.2",
     "express-session": "^1.15.6",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.0.6",
